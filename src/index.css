@@ -1,13 +1,127 @@
-body {
+/*  */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap');
+:root {
+  --main-clr: #13158d;
+  --accent-clr: #ff4a4a;
+}
+html {
+  box-sizing: border-box;
+}
+*,
+*::before,
+*::after {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  box-sizing: inherit;
+}
+ul {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+  display: inline-block;
+}
+body {
+  font-family: 'Open Sans', sans-serif;
+  background: #fff;
+  background: linear-gradient(
+      135deg,
+      #708090 21px,
+      #d9ecff 22px,
+      #d9ecff 24px,
+      transparent 24px,
+      transparent 67px,
+      #d9ecff 67px,
+      #d9ecff 69px,
+      transparent 69px
+    ),
+    linear-gradient(
+        225deg,
+        #708090 21px,
+        #d9ecff 22px,
+        #d9ecff 24px,
+        transparent 24px,
+        transparent 67px,
+        #d9ecff 67px,
+        #d9ecff 69px,
+        transparent 69px
+      )
+      0 64px;
+  background-color: #708090;
+  background-size: 64px 128px;
+}
+.container {
+  min-height: 100vh;
+  margin: 0 auto;
+  width: min(800px, 90%);
+  display: flex;
+  flex-direction: column;
+  padding: 1rem 0;
+}
+.container > *:last-child {
+  flex-grow: 1;
+}
+.navbar {
+  padding: 4rem;
+}
+.navbar-list {
+  display: flex;
+  justify-content: space-between;
+}
+.navbar-link {
+  color: var(--main-clr);
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  background-color: #fff;
+  border: 1px solid currentColor;
+}
+.home {
+  background: #fff;
+  padding: 1rem;
+  border-radius: 5px;
+}
+.home h1 {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+.list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(var(--min), 1fr));
+  gap: 1rem;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.item {
+  border: 1px solid var(--main-clr);
+  border-radius: 5px;
+  padding: 1rem;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1rem;
+}
+.link {
+  color: var(--main-clr);
+  background-color: var(--accent-clr);
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  margin-top: auto;
+}
+.users-list {
+  --min: 250px;
+}
+.posts-list {
+  --min: 300px;
+}
+.todos-list {
+  --min: 200px;
+}
+.flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.completed {
+  text-decoration: line-through;
 }
